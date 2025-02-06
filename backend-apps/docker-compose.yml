@@ -2,6 +2,7 @@ services:
   api:
     container_name: backend-apps-api
     image: backend-apps
+    pull_policy: if_not_present
     restart: always
     ports:
       - "3000:3000"
