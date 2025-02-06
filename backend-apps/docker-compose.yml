@@ -4,4 +4,4 @@ services:
     image: backend-apps
     restart: always
     ports:
-      - "8000:3000"
+      - "3000:3000"
