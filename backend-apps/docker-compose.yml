@@ -1,7 +1,7 @@
 services:
   api:
     container_name: backend-apps-api
-    image: backend-apps
+    image: ghcr.io/buraito-kun/devops-assignment:latest
     pull_policy: if_not_present
     restart: always
     ports:
