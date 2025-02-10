@@ -20,3 +20,11 @@ jobs:
           docker build -t ghcr.io/buraito-kun/devops-assignment:${{ github.ref_name }} -t ghcr.io/buraito-kun/devops-assignment:latest backend-apps/
           docker push ghcr.io/buraito-kun/devops-assignment:${{ github.ref_name }}
           docker push ghcr.io/buraito-kun/devops-assignment:latest
+  deployment:
+    runs-on: self-hosted
+    needs: build
+    steps:
+      - name: Pull image
+        run: docker pull ghcr.io/buraito-kun/devops-assignment:${{ github.ref_name }}
+      - name: Deploy using terraform
+        run: terraform apply -auto-approve -var 'image_version=${{ github.ref_name }}'
