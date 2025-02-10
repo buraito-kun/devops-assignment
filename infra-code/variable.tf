@@ -7,5 +7,5 @@ variable "image_name" {
 variable "image_version" {
   description = "App version tag in image"
   type        = string
-  default     = ":latest"
+  default     = "latest"
 }

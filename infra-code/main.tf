@@ -35,7 +35,7 @@ resource "kubernetes_deployment_v1" "deployment" {
       spec {
         container {
           name              = "backend-apps"
-          image             = "${var.image_name}${var.image_version}"
+          image             = "${var.image_name}:${var.image_version}"
           image_pull_policy = "IfNotPresent"
           resources {
             limits = {
