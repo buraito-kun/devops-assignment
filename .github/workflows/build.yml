@@ -31,4 +31,5 @@ jobs:
         run: |
           cd infra-code
           terraform init
+          terraform destroy -auto-approve
           terraform apply -auto-approve -var 'image_version=${{ github.ref_name }}'
