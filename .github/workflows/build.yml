@@ -17,5 +17,6 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and push image
         run: |
-          docker build -t ghcr.io/buraito-kun/devops-assignment:${{ github.ref_name }} backend-apps/
+          docker build -t ghcr.io/buraito-kun/devops-assignment:${{ github.ref_name }} -t ghcr.io/buraito-kun/devops-assignment:latest backend-apps/
           docker push ghcr.io/buraito-kun/devops-assignment:${{ github.ref_name }}
+          docker push ghcr.io/buraito-kun/devops-assignment:latest
