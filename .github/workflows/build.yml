@@ -28,4 +28,6 @@ jobs:
       - name: Pull image
         run: docker pull ghcr.io/buraito-kun/devops-assignment:${{ github.ref_name }}
       - name: Deploy using terraform
-        run: cd infra-code && terraform apply -auto-approve -var 'image_version=${{ github.ref_name }}'
+        run: |
+          cd infra-code
+          terraform apply -auto-approve -var 'image_version=${{ github.ref_name }}'
